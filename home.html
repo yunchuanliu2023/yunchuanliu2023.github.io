@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>学海导航 - 学生找老师平台 | Study Navigator - Find Teachers</title>
+    <title>Study Navigator - Find Teachers Platform | 学海导航 - 学生找老师平台</title>
     <style>
         /* 基础样式 */
         * {
@@ -112,10 +112,26 @@
             transition: background-color 0.3s;
             border: none;
             cursor: pointer;
+            margin: 0.2rem;
         }
         
         .btn:hover {
             background-color: #c0392b;
+        }
+        
+        .btn-secondary {
+            background-color: #3498db;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #2980b9;
+        }
+        
+        .teacher-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 1rem;
         }
         
         /* 老师介绍样式 */
@@ -298,6 +314,15 @@
             .contact-container {
                 grid-template-columns: 1fr;
             }
+            
+            .teacher-actions {
+                flex-direction: column;
+            }
+            
+            .teacher-actions .btn {
+                width: 100%;
+                margin: 0.2rem 0;
+            }
         }
     </style>
 </head>
@@ -306,17 +331,17 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo" data-lang="zh">学海导航</div>
-                <div class="logo" data-lang="en" style="display:none;">Study Navigator</div>
+                <div class="logo" data-lang="zh" style="display:none;">学海导航</div>
+                <div class="logo" data-lang="en">Study Navigator</div>
                 <ul class="nav-links">
-                    <li><a href="#teachers" data-lang="zh">老师介绍</a><a href="#teachers" data-lang="en" style="display:none;">Teachers</a></li>
-                    <li><a href="#subjects" data-lang="zh">科目介绍</a><a href="#subjects" data-lang="en" style="display:none;">Subjects</a></li>
-                    <li><a href="#contact" data-lang="zh">联系方式</a><a href="#contact" data-lang="en" style="display:none;">Contact</a></li>
-                    <li><a href="#news" data-lang="zh">新闻动态</a><a href="#news" data-lang="en" style="display:none;">News</a></li>
+                    <li><a href="#teachers" data-lang="zh" style="display:none;">老师介绍</a><a href="#teachers" data-lang="en">Teachers</a></li>
+                    <li><a href="#subjects" data-lang="zh" style="display:none;">科目介绍</a><a href="#subjects" data-lang="en">Subjects</a></li>
+                    <li><a href="#contact" data-lang="zh" style="display:none;">联系方式</a><a href="#contact" data-lang="en">Contact</a></li>
+                    <li><a href="#news" data-lang="zh" style="display:none;">新闻动态</a><a href="#news" data-lang="en">News</a></li>
                     <li>
                         <button class="language-switcher" id="languageToggle">
-                            <span data-lang="zh">EN</span>
-                            <span data-lang="en" style="display:none;">中文</span>
+                            <span data-lang="zh" style="display:none;">EN</span>
+                            <span data-lang="en">中文</span>
                         </button>
                     </li>
                 </ul>
@@ -327,33 +352,37 @@
     <!-- 英雄区域 -->
     <section class="hero">
         <div class="container">
-            <h1 data-lang="zh">找到最适合你的老师</h1>
-            <h1 data-lang="en" style="display:none;">Find the Perfect Teacher for You</h1>
-            <p data-lang="zh">我们汇集了各学科领域的优秀教师，为学生提供个性化、高质量的教学指导</p>
-            <p data-lang="en" style="display:none;">We bring together excellent teachers from various disciplines to provide students with personalized, high-quality teaching guidance.</p>
-            <a href="#teachers" class="btn" data-lang="zh">查看老师</a>
-            <a href="#teachers" class="btn" data-lang="en" style="display:none;">View Teachers</a>
+            <h1 data-lang="zh" style="display:none;">找到最适合你的老师</h1>
+            <h1 data-lang="en">Find the Perfect Teacher for You</h1>
+            <p data-lang="zh" style="display:none;">我们汇集了各学科领域的优秀教师，为学生提供个性化、高质量的教学指导</p>
+            <p data-lang="en">We bring together excellent teachers from various disciplines to provide students with personalized, high-quality teaching guidance.</p>
+            <a href="#teachers" class="btn" data-lang="zh" style="display:none;">查看老师</a>
+            <a href="#teachers" class="btn" data-lang="en">View Teachers</a>
         </div>
     </section>
 
     <!-- 老师介绍 -->
     <section id="teachers" class="teachers">
         <div class="container">
-            <h2 class="section-title" data-lang="zh">优秀教师团队</h2>
-            <h2 class="section-title" data-lang="en" style="display:none;">Our Excellent Teachers</h2>
+            <h2 class="section-title" data-lang="zh" style="display:none;">优秀教师团队</h2>
+            <h2 class="section-title" data-lang="en">Our Excellent Teachers</h2>
             <div class="teachers-grid">
                 <!-- 老师卡片1 -->
                 <div class="teacher-card">
                     <div class="teacher-img" style="background-color: #3498db;"></div>
                     <div class="teacher-info">
-                        <h3 class="teacher-name" data-lang="zh">张明老师</h3>
-                        <h3 class="teacher-name" data-lang="en" style="display:none;">Teacher Zhang Ming</h3>
-                        <p class="teacher-subject" data-lang="zh">数学 | 8年教学经验</p>
-                        <p class="teacher-subject" data-lang="en" style="display:none;">Mathematics | 8 years teaching experience</p>
-                        <p class="teacher-bio" data-lang="zh">专注于高中数学教学，善于将复杂问题简单化，帮助学生建立数学思维。</p>
-                        <p class="teacher-bio" data-lang="en" style="display:none">Specializing in high school mathematics teaching, skilled at simplifying complex problems and helping students build mathematical thinking.</p>
-                        <a href="#" class="btn" data-lang="zh">联系老师</a>
-                        <a href="#" class="btn" data-lang="en" style="display:none;">Contact Teacher</a>
+                        <h3 class="teacher-name" data-lang="zh" style="display:none;">张明老师</h3>
+                        <h3 class="teacher-name" data-lang="en">Teacher Zhang Ming</h3>
+                        <p class="teacher-subject" data-lang="zh" style="display:none;">数学 | 8年教学经验</p>
+                        <p class="teacher-subject" data-lang="en">Mathematics | 8 years teaching experience</p>
+                        <p class="teacher-bio" data-lang="zh" style="display:none;">专注于高中数学教学，善于将复杂问题简单化，帮助学生建立数学思维。</p>
+                        <p class="teacher-bio" data-lang="en">Specializing in high school mathematics teaching, skilled at simplifying complex problems and helping students build mathematical thinking.</p>
+                        <div class="teacher-actions">
+                            <a href="#" class="btn" data-lang="zh" style="display:none;">联系老师</a>
+                            <a href="#" class="btn" data-lang="en">Contact Teacher</a>
+                            <a href="#" class="btn btn-secondary" data-lang="zh" style="display:none;">试讲视频</a>
+                            <a href="#" class="btn btn-secondary" data-lang="en">Demo Video</a>
+                        </div>
                     </div>
                 </div>
                 
@@ -361,14 +390,18 @@
                 <div class="teacher-card">
                     <div class="teacher-img" style="background-color: #e74c3c;"></div>
                     <div class="teacher-info">
-                        <h3 class="teacher-name" data-lang="zh">李华老师</h3>
-                        <h3 class="teacher-name" data-lang="en" style="display:none;">Teacher Li Hua</h3>
-                        <p class="teacher-subject" data-lang="zh">英语 | 10年教学经验</p>
-                        <p class="teacher-subject" data-lang="en" style="display:none;">English | 10 years teaching experience</p>
-                        <p class="teacher-bio" data-lang="zh">英语专业八级，注重口语和写作能力培养，帮助学生全面提升英语水平。</p>
-                        <p class="teacher-bio" data-lang="en" style="display:none">TEM-8 certified, focusing on developing speaking and writing skills, helping students improve their English comprehensively.</p>
-                        <a href="#" class="btn" data-lang="zh">联系老师</a>
-                        <a href="#" class="btn" data-lang="en" style="display:none;">Contact Teacher</a>
+                        <h3 class="teacher-name" data-lang="zh" style="display:none;">李华老师</h3>
+                        <h3 class="teacher-name" data-lang="en">Teacher Li Hua</h3>
+                        <p class="teacher-subject" data-lang="zh" style="display:none;">英语 | 10年教学经验</p>
+                        <p class="teacher-subject" data-lang="en">English | 10 years teaching experience</p>
+                        <p class="teacher-bio" data-lang="zh" style="display:none;">英语专业八级，注重口语和写作能力培养，帮助学生全面提升英语水平。</p>
+                        <p class="teacher-bio" data-lang="en">TEM-8 certified, focusing on developing speaking and writing skills, helping students improve their English comprehensively.</p>
+                        <div class="teacher-actions">
+                            <a href="#" class="btn" data-lang="zh" style="display:none;">联系老师</a>
+                            <a href="#" class="btn" data-lang="en">Contact Teacher</a>
+                            <a href="#" class="btn btn-secondary" data-lang="zh" style="display:none;">试讲视频</a>
+                            <a href="#" class="btn btn-secondary" data-lang="en">Demo Video</a>
+                        </div>
                     </div>
                 </div>
                 
@@ -376,14 +409,18 @@
                 <div class="teacher-card">
                     <div class="teacher-img" style="background-color: #2ecc71;"></div>
                     <div class="teacher-info">
-                        <h3 class="teacher-name" data-lang="zh">王芳老师</h3>
-                        <h3 class="teacher-name" data-lang="en" style="display:none;">Teacher Wang Fang</h3>
-                        <p class="teacher-subject" data-lang="zh">物理 | 6年教学经验</p>
-                        <p class="teacher-subject" data-lang="en" style="display:none;">Physics | 6 years teaching experience</p>
-                        <p class="teacher-bio" data-lang="zh">物理竞赛指导专家，善于通过实验帮助学生理解抽象物理概念。</p>
-                        <p class="teacher-bio" data-lang="en" style="display:none">Physics competition guidance expert, skilled at helping students understand abstract physics concepts through experiments.</p>
-                        <a href="#" class="btn" data-lang="zh">联系老师</a>
-                        <a href="#" class="btn" data-lang="en" style="display:none;">Contact Teacher</a>
+                        <h3 class="teacher-name" data-lang="zh" style="display:none;">王芳老师</h3>
+                        <h3 class="teacher-name" data-lang="en">Teacher Wang Fang</h3>
+                        <p class="teacher-subject" data-lang="zh" style="display:none;">物理 | 6年教学经验</p>
+                        <p class="teacher-subject" data-lang="en">Physics | 6 years teaching experience</p>
+                        <p class="teacher-bio" data-lang="zh" style="display:none;">物理竞赛指导专家，善于通过实验帮助学生理解抽象物理概念。</p>
+                        <p class="teacher-bio" data-lang="en">Physics competition guidance expert, skilled at helping students understand abstract physics concepts through experiments.</p>
+                        <div class="teacher-actions">
+                            <a href="#" class="btn" data-lang="zh" style="display:none;">联系老师</a>
+                            <a href="#" class="btn" data-lang="en">Contact Teacher</a>
+                            <a href="#" class="btn btn-secondary" data-lang="zh" style="display:none;">试讲视频</a>
+                            <a href="#" class="btn btn-secondary" data-lang="en">Demo Video</a>
+                        </div>
                     </div>
                 </div>
                 
@@ -391,14 +428,18 @@
                 <div class="teacher-card">
                     <div class="teacher-img" style="background-color: #f39c12;"></div>
                     <div class="teacher-info">
-                        <h3 class="teacher-name" data-lang="zh">赵强老师</h3>
-                        <h3 class="teacher-name" data-lang="en" style="display:none;">Teacher Zhao Qiang</h3>
-                        <p class="teacher-subject" data-lang="zh">化学 | 7年教学经验</p>
-                        <p class="teacher-subject" data-lang="en" style="display:none;">Chemistry | 7 years teaching experience</p>
-                        <p class="teacher-bio" data-lang="zh">化学博士，注重理论与实践结合，帮助学生掌握化学核心概念。</p>
-                        <p class="teacher-bio" data-lang="en" style="display:none">Ph.D. in Chemistry, focusing on combining theory and practice to help students master core chemistry concepts.</p>
-                        <a href="#" class="btn" data-lang="zh">联系老师</a>
-                        <a href="#" class="btn" data-lang="en" style="display:none;">Contact Teacher</a>
+                        <h3 class="teacher-name" data-lang="zh" style="display:none;">赵强老师</h3>
+                        <h3 class="teacher-name" data-lang="en">Teacher Zhao Qiang</h3>
+                        <p class="teacher-subject" data-lang="zh" style="display:none;">化学 | 7年教学经验</p>
+                        <p class="teacher-subject" data-lang="en">Chemistry | 7 years teaching experience</p>
+                        <p class="teacher-bio" data-lang="zh" style="display:none;">化学博士，注重理论与实践结合，帮助学生掌握化学核心概念。</p>
+                        <p class="teacher-bio" data-lang="en">Ph.D. in Chemistry, focusing on combining theory and practice to help students master core chemistry concepts.</p>
+                        <div class="teacher-actions">
+                            <a href="#" class="btn" data-lang="zh" style="display:none;">联系老师</a>
+                            <a href="#" class="btn" data-lang="en">Contact Teacher</a>
+                            <a href="#" class="btn btn-secondary" data-lang="zh" style="display:none;">试讲视频</a>
+                            <a href="#" class="btn btn-secondary" data-lang="en">Demo Video</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -408,61 +449,61 @@
     <!-- 科目介绍 -->
     <section id="subjects" class="subjects">
         <div class="container">
-            <h2 class="section-title" data-lang="zh">教学科目</h2>
-            <h2 class="section-title" data-lang="en" style="display:none;">Teaching Subjects</h2>
+            <h2 class="section-title" data-lang="zh" style="display:none;">教学科目</h2>
+            <h2 class="section-title" data-lang="en">Teaching Subjects</h2>
             <div class="subjects-grid">
                 <!-- 科目卡片1 -->
                 <div class="subject-card">
                     <div class="subject-icon">∫</div>
-                    <h3 data-lang="zh">数学</h3>
-                    <h3 data-lang="en" style="display:none;">Mathematics</h3>
-                    <p data-lang="zh">涵盖初中、高中数学，包括代数、几何、微积分等内容</p>
-                    <p data-lang="en" style="display:none;">Covers middle and high school mathematics, including algebra, geometry, calculus, etc.</p>
+                    <h3 data-lang="zh" style="display:none;">数学</h3>
+                    <h3 data-lang="en">Mathematics</h3>
+                    <p data-lang="zh" style="display:none;">涵盖初中、高中数学，包括代数、几何、微积分等内容</p>
+                    <p data-lang="en">Covers middle and high school mathematics, including algebra, geometry, calculus, etc.</p>
                 </div>
                 
                 <!-- 科目卡片2 -->
                 <div class="subject-card">
                     <div class="subject-icon">A</div>
-                    <h3 data-lang="zh">英语</h3>
-                    <h3 data-lang="en" style="display:none;">English</h3>
-                    <p data-lang="zh">语法、阅读、写作、口语全方位提升，备战各类英语考试</p>
-                    <p data-lang="en" style="display:none;">Comprehensive improvement in grammar, reading, writing, and speaking, preparing for various English exams.</p>
+                    <h3 data-lang="zh" style="display:none;">英语</h3>
+                    <h3 data-lang="en">English</h3>
+                    <p data-lang="zh" style="display:none;">语法、阅读、写作、口语全方位提升，备战各类英语考试</p>
+                    <p data-lang="en">Comprehensive improvement in grammar, reading, writing, and speaking, preparing for various English exams.</p>
                 </div>
                 
                 <!-- 科目卡片3 -->
                 <div class="subject-card">
                     <div class="subject-icon">⚛</div>
-                    <h3 data-lang="zh">物理</h3>
-                    <h3 data-lang="en" style="display:none;">Physics</h3>
-                    <p data-lang="zh">力学、电磁学、热学、光学等，培养科学思维和实验能力</p>
-                    <p data-lang="en" style="display:none;">Mechanics, electromagnetism, thermodynamics, optics, etc., cultivating scientific thinking and experimental skills.</p>
+                    <h3 data-lang="zh" style="display:none;">物理</h3>
+                    <h3 data-lang="en">Physics</h3>
+                    <p data-lang="zh" style="display:none;">力学、电磁学、热学、光学等，培养科学思维和实验能力</p>
+                    <p data-lang="en">Mechanics, electromagnetism, thermodynamics, optics, etc., cultivating scientific thinking and experimental skills.</p>
                 </div>
                 
                 <!-- 科目卡片4 -->
                 <div class="subject-card">
                     <div class="subject-icon">⚗</div>
-                    <h3 data-lang="zh">化学</h3>
-                    <h3 data-lang="en" style="display:none;">Chemistry</h3>
-                    <p data-lang="zh">无机化学、有机化学、分析化学，理论与实践相结合</p>
-                    <p data-lang="en" style="display:none;">Inorganic chemistry, organic chemistry, analytical chemistry, combining theory and practice.</p>
+                    <h3 data-lang="zh" style="display:none;">化学</h3>
+                    <h3 data-lang="en">Chemistry</h3>
+                    <p data-lang="zh" style="display:none;">无机化学、有机化学、分析化学，理论与实践相结合</p>
+                    <p data-lang="en">Inorganic chemistry, organic chemistry, analytical chemistry, combining theory and practice.</p>
                 </div>
                 
                 <!-- 科目卡片5 -->
                 <div class="subject-card">
                     <div class="subject-icon">文</div>
-                    <h3 data-lang="zh">语文</h3>
-                    <h3 data-lang="en" style="display:none;">Chinese</h3>
-                    <p data-lang="zh">阅读理解、写作技巧、古文鉴赏，提升语言表达能力</p>
-                    <p data-lang="en" style="display:none;">Reading comprehension, writing skills, classical literature appreciation, improving language expression ability.</p>
+                    <h3 data-lang="zh" style="display:none;">语文</h3>
+                    <h3 data-lang="en">Chinese</h3>
+                    <p data-lang="zh" style="display:none;">阅读理解、写作技巧、古文鉴赏，提升语言表达能力</p>
+                    <p data-lang="en">Reading comprehension, writing skills, classical literature appreciation, improving language expression ability.</p>
                 </div>
                 
                 <!-- 科目卡片6 -->
                 <div class="subject-card">
                     <div class="subject-icon">史</div>
-                    <h3 data-lang="zh">历史</h3>
-                    <h3 data-lang="en" style="display:none;">History</h3>
-                    <p data-lang="zh">中外历史、文化传承，培养历史思维和分析能力</p>
-                    <p data-lang="en" style="display:none;">Chinese and world history, cultural heritage, cultivating historical thinking and analytical skills.</p>
+                    <h3 data-lang="zh" style="display:none;">历史</h3>
+                    <h3 data-lang="en">History</h3>
+                    <p data-lang="zh" style="display:none;">中外历史、文化传承，培养历史思维和分析能力</p>
+                    <p data-lang="en">Chinese and world history, cultural heritage, cultivating historical thinking and analytical skills.</p>
                 </div>
             </div>
         </div>
@@ -471,33 +512,33 @@
     <!-- 联系方式 -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title" data-lang="zh">联系我们</h2>
-            <h2 class="section-title" data-lang="en" style="display:none;">Contact Us</h2>
+            <h2 class="section-title" data-lang="zh" style="display:none;">联系我们</h2>
+            <h2 class="section-title" data-lang="en">Contact Us</h2>
             <div class="contact-container">
                 <div class="contact-info">
-                    <h3 data-lang="zh">平台信息</h3>
-                    <h3 data-lang="en" style="display:none;">Platform Information</h3>
-                    <p data-lang="zh">如果您有任何问题或需要帮助，请随时联系我们：</p>
-                    <p data-lang="en" style="display:none;">If you have any questions or need assistance, please feel free to contact us:</p>
-                    <p><strong data-lang="zh">电话：</strong><strong data-lang="en" style="display:none;">Phone: </strong> 400-123-4567</p>
-                    <p><strong data-lang="zh">邮箱：</strong><strong data-lang="en" style="display:none;">Email: </strong> contact@xuehai.com</p>
-                    <p><strong data-lang="zh">地址：</strong><strong data-lang="en" style="display:none;">Address: </strong> <span data-lang="zh">北京市海淀区学院路123号</span><span data-lang="en" style="display:none;">123 Xueyuan Road, Haidian District, Beijing</span></p>
-                    <p><strong data-lang="zh">工作时间：</strong><strong data-lang="en" style="display:none;">Working Hours: </strong> <span data-lang="zh">周一至周五 9:00-18:00</span><span data-lang="en" style="display:none;">Monday to Friday 9:00-18:00</span></p>
+                    <h3 data-lang="zh" style="display:none;">平台信息</h3>
+                    <h3 data-lang="en">Platform Information</h3>
+                    <p data-lang="zh" style="display:none;">如果您有任何问题或需要帮助，请随时联系我们：</p>
+                    <p data-lang="en">If you have any questions or need assistance, please feel free to contact us:</p>
+                    <p><strong data-lang="zh" style="display:none;">电话：</strong><strong data-lang="en">Phone: </strong> 400-123-4567</p>
+                    <p><strong data-lang="zh" style="display:none;">邮箱：</strong><strong data-lang="en">Email: </strong> contact@xuehai.com</p>
+                    <p><strong data-lang="zh" style="display:none;">地址：</strong><strong data-lang="en">Address: </strong> <span data-lang="zh" style="display:none;">北京市海淀区学院路123号</span><span data-lang="en">123 Xueyuan Road, Haidian District, Beijing</span></p>
+                    <p><strong data-lang="zh" style="display:none;">工作时间：</strong><strong data-lang="en">Working Hours: </strong> <span data-lang="zh" style="display:none;">周一至周五 9:00-18:00</span><span data-lang="en">Monday to Friday 9:00-18:00</span></p>
                 </div>
                 <div class="contact-form">
-                    <h3 data-lang="zh">发送消息</h3>
-                    <h3 data-lang="en" style="display:none;">Send Message</h3>
+                    <h3 data-lang="zh" style="display:none;">发送消息</h3>
+                    <h3 data-lang="en">Send Message</h3>
                     <form>
-                        <input type="text" placeholder="您的姓名" data-lang="zh" required>
-                        <input type="text" placeholder="Your Name" data-lang="en" style="display:none;" required>
-                        <input type="email" placeholder="您的邮箱" data-lang="zh" required>
-                        <input type="email" placeholder="Your Email" data-lang="en" style="display:none;" required>
-                        <input type="text" placeholder="主题" data-lang="zh" required>
-                        <input type="text" placeholder="Subject" data-lang="en" style="display:none;" required>
-                        <textarea placeholder="请输入您的消息..." data-lang="zh" required></textarea>
-                        <textarea placeholder="Please enter your message..." data-lang="en" style="display:none;" required></textarea>
-                        <button type="submit" class="btn" data-lang="zh">发送消息</button>
-                        <button type="submit" class="btn" data-lang="en" style="display:none;">Send Message</button>
+                        <input type="text" placeholder="Your Name" data-lang="en" required>
+                        <input type="text" placeholder="您的姓名" data-lang="zh" style="display:none;" required>
+                        <input type="email" placeholder="Your Email" data-lang="en" required>
+                        <input type="email" placeholder="您的邮箱" data-lang="zh" style="display:none;" required>
+                        <input type="text" placeholder="Subject" data-lang="en" required>
+                        <input type="text" placeholder="主题" data-lang="zh" style="display:none;" required>
+                        <textarea placeholder="Please enter your message..." data-lang="en" required></textarea>
+                        <textarea placeholder="请输入您的消息..." data-lang="zh" style="display:none;" required></textarea>
+                        <button type="submit" class="btn" data-lang="zh" style="display:none;">发送消息</button>
+                        <button type="submit" class="btn" data-lang="en">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -507,42 +548,42 @@
     <!-- 新闻动态 -->
     <section id="news" class="news">
         <div class="container">
-            <h2 class="section-title" data-lang="zh">新闻动态</h2>
-            <h2 class="section-title" data-lang="en" style="display:none;">News & Updates</h2>
+            <h2 class="section-title" data-lang="zh" style="display:none;">新闻动态</h2>
+            <h2 class="section-title" data-lang="en">News & Updates</h2>
             <div class="news-grid">
                 <!-- 新闻卡片1 -->
                 <div class="news-card">
                     <div class="news-content">
-                        <div class="news-date" data-lang="zh">2023年10月15日</div>
-                        <div class="news-date" data-lang="en" style="display:none;">October 15, 2023</div>
-                        <h3 class="news-title" data-lang="zh">秋季学期一对一辅导课程开始报名</h3>
-                        <h3 class="news-title" data-lang="en" style="display:none;">Fall Semester One-on-One Tutoring Courses Open for Registration</h3>
-                        <p data-lang="zh">新学期即将开始，我们推出了一系列一对一辅导课程，帮助学生在新学期取得更好成绩。</p>
-                        <p data-lang="en" style="display:none;">As the new semester approaches, we have launched a series of one-on-one tutoring courses to help students achieve better results in the new semester.</p>
+                        <div class="news-date" data-lang="zh" style="display:none;">2023年10月15日</div>
+                        <div class="news-date" data-lang="en">October 15, 2023</div>
+                        <h3 class="news-title" data-lang="zh" style="display:none;">秋季学期一对一辅导课程开始报名</h3>
+                        <h3 class="news-title" data-lang="en">Fall Semester One-on-One Tutoring Courses Open for Registration</h3>
+                        <p data-lang="zh" style="display:none;">新学期即将开始，我们推出了一系列一对一辅导课程，帮助学生在新学期取得更好成绩。</p>
+                        <p data-lang="en">As the new semester approaches, we have launched a series of one-on-one tutoring courses to help students achieve better results in the new semester.</p>
                     </div>
                 </div>
                 
                 <!-- 新闻卡片2 -->
                 <div class="news-card">
                     <div class="news-content">
-                        <div class="news-date" data-lang="zh">2023年9月28日</div>
-                        <div class="news-date" data-lang="en" style="display:none;">September 28, 2023</div>
-                        <h3 class="news-title" data-lang="zh">平台新增五位优秀教师</h3>
-                        <h3 class="news-title" data-lang="en" style="display:none;">Platform Adds Five Excellent Teachers</h3>
-                        <p data-lang="zh">我们很高兴地宣布，平台新增了五位来自重点学校的优秀教师，涵盖数学、物理、化学等科目。</p>
-                        <p data-lang="en" style="display:none;">We are pleased to announce that the platform has added five excellent teachers from key schools, covering subjects such as mathematics, physics, and chemistry.</p>
+                        <div class="news-date" data-lang="zh" style="display:none;">2023年9月28日</div>
+                        <div class="news-date" data-lang="en">September 28, 2023</div>
+                        <h3 class="news-title" data-lang="zh" style="display:none;">平台新增五位优秀教师</h3>
+                        <h3 class="news-title" data-lang="en">Platform Adds Five Excellent Teachers</h3>
+                        <p data-lang="zh" style="display:none;">我们很高兴地宣布，平台新增了五位来自重点学校的优秀教师，涵盖数学、物理、化学等科目。</p>
+                        <p data-lang="en">We are pleased to announce that the platform has added five excellent teachers from key schools, covering subjects such as mathematics, physics, and chemistry.</p>
                     </div>
                 </div>
                 
                 <!-- 新闻卡片3 -->
                 <div class="news-card">
                     <div class="news-content">
-                        <div class="news-date" data-lang="zh">2023年9月10日</div>
-                        <div class="news-date" data-lang="en" style="display:none;">September 10, 2023</div>
-                        <h3 class="news-title" data-lang="zh">教师节特别活动：免费试听课</h3>
-                        <h3 class="news-title" data-lang="en" style="display:none;">Teacher's Day Special: Free Trial Classes</h3>
-                        <p data-lang="zh">为庆祝教师节，我们推出免费试听课活动，学生可以免费体验一节30分钟的课程。</p>
-                        <p data-lang="en" style="display:none;">To celebrate Teacher's Day, we are offering free trial classes where students can experience a 30-minute lesson for free.</p>
+                        <div class="news-date" data-lang="zh" style="display:none;">2023年9月10日</div>
+                        <div class="news-date" data-lang="en">September 10, 2023</div>
+                        <h3 class="news-title" data-lang="zh" style="display:none;">教师节特别活动：免费试听课</h3>
+                        <h3 class="news-title" data-lang="en">Teacher's Day Special: Free Trial Classes</h3>
+                        <p data-lang="zh" style="display:none;">为庆祝教师节，我们推出免费试听课活动，学生可以免费体验一节30分钟的课程。</p>
+                        <p data-lang="en">To celebrate Teacher's Day, we are offering free trial classes where students can experience a 30-minute lesson for free.</p>
                     </div>
                 </div>
             </div>
@@ -553,13 +594,13 @@
     <footer>
         <div class="container">
             <ul class="footer-links">
-                <li><a href="#teachers" data-lang="zh">老师介绍</a><a href="#teachers" data-lang="en" style="display:none;">Teachers</a></li>
-                <li><a href="#subjects" data-lang="zh">科目介绍</a><a href="#subjects" data-lang="en" style="display:none;">Subjects</a></li>
-                <li><a href="#contact" data-lang="zh">联系方式</a><a href="#contact" data-lang="en" style="display:none;">Contact</a></li>
-                <li><a href="#news" data-lang="zh">新闻动态</a><a href="#news" data-lang="en" style="display:none;">News</a></li>
+                <li><a href="#teachers" data-lang="zh" style="display:none;">老师介绍</a><a href="#teachers" data-lang="en">Teachers</a></li>
+                <li><a href="#subjects" data-lang="zh" style="display:none;">科目介绍</a><a href="#subjects" data-lang="en">Subjects</a></li>
+                <li><a href="#contact" data-lang="zh" style="display:none;">联系方式</a><a href="#contact" data-lang="en">Contact</a></li>
+                <li><a href="#news" data-lang="zh" style="display:none;">新闻动态</a><a href="#news" data-lang="en">News</a></li>
             </ul>
-            <p data-lang="zh">&copy; 2023 学海导航 - 学生找老师平台. 保留所有权利.</p>
-            <p data-lang="en" style="display:none;">&copy; 2023 Study Navigator - Find Teachers Platform. All rights reserved.</p>
+            <p data-lang="zh" style="display:none;">&copy; 2023 学海导航 - 学生找老师平台. 保留所有权利.</p>
+            <p data-lang="en">&copy; 2023 Study Navigator - Find Teachers Platform. All rights reserved.</p>
         </div>
     </footer>
 
@@ -567,7 +608,7 @@
         // 语言切换功能
         document.addEventListener('DOMContentLoaded', function() {
             const languageToggle = document.getElementById('languageToggle');
-            let currentLanguage = 'zh'; // 默认语言为中文
+            let currentLanguage = 'en'; // 默认语言为英文
             
             languageToggle.addEventListener('click', function() {
                 // 切换语言
